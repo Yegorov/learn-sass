@@ -1,0 +1,25 @@
+// Other
+
+//=======================================
+/* test loop */
+@each $browser in ie, chrome, firefox, opera
+  .#{$browser}
+    background: url(../img/#{$browser}.png) no-repeat
+
+
+
+.foo.bar .baz.bang, .bip.qux
+  $selector: &
+  propert: $selector
+
+@mixin does-parent-exist
+  @if &
+    &:hover
+      color: red
+  @else
+    a
+      color: red
+
+.test .qwe, a.qqqq
+  @include does-parent-exist
+  margin: 0

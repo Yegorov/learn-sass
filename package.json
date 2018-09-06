@@ -1,0 +1,13 @@
+{
+  "name": "testsass",
+  "version": "1.0.0",
+  "description": "test sass first step",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "sass": "^1.13.2",
+    "stylelint": "^9.5.0",
+    "stylelint-config-standard": "^18.2.0"
+  }
+}

@@ -1,0 +1,99 @@
+// Quick overview from: https://sass-lang.com/guide
+
+// How use:
+// * in root dir run: yarn install
+// * run: node_modules/.bin/sass app/sass/overview.sass app/css/overview.css
+//   or: node_modules/.bin/sass --watch app/sass:app/css
+//       node_modules/.bin/stylelint app/css/overview.css
+
+
+//======================================
+// test variable
+$my-test-var: #123
+
+/* Using variable */
+body
+  color: $my-test-var
+
+
+//======================================
+/* test nesting */
+nav
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+  li
+    display: inline-block
+
+  a
+    display: block
+    padding: 6px 12px
+    text-decoration: none
+
+
+//======================================
+/* test partial */
+@import partial
+@import reset
+
+//======================================
+/* test mixin */
+// = --- alias of @mixin
+// + --- alias of @include
+=transform($property)
+  -webkit-transform: $property
+  -ms-transform: $property
+  transform: $property
+
+.box
+  +transform(rotate(30deg))
+
+//======================================
+/* test inheritance */
+// % - placeholder (not include to css)
+%equal-heights
+  display: flex
+  flex: wrap
+
+%message-shared
+  border: 1px solid #ccc
+  padding: 10px
+  color: #333
+
+.message
+  @extend %message-shared
+
+.success
+  @extend %message-shared
+  border-color: green
+
+.error
+  @extend %message-shared
+  border-color: red
+
+.warning
+  @extend %message-shared
+  border-color: yellow
+
+.test
+  margin: 120px
+
+.exttest
+  @extend .test
+  padding: 0
+
+
+//=======================================
+/* test operators */
+.container
+  width: 100%
+
+article[role="main"]
+  float: left
+  width: 600px / 960px * 100%
+
+aside[role="complementary"]
+  float: right
+  width: 300px / 960px * 100%
